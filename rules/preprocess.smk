@@ -5,7 +5,7 @@ if downsampling:
 else:
     dir = "reads"
 
-umis = config["parameters"]["extract_umis"]["enabled"]
+extract_umis = config["parameters"]["extract_umis"]["enabled"]
 
 ## Let stablish rule order whether data is single end or paired end
 if downsampling:
@@ -63,40 +63,40 @@ rule concat_R2_reads:
     shell: 'cat {input} > {output}'
 
 
-if umis:
-    rule umis_single_end:
-        input:
-            lambda wildcards: get_raw_fastq(wildcards, strand=1)
-        output:
-            sample=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz']
-        threads:
-	        get_resource('umis_single_end', 'threads')
-        resources:
-	        mem_mb=get_resource('umis_single_end', 'mem_mb'),
-                runtime=get_resource('umis_single_end', 'runtime')
-        log:
-            f"{LOGDIR}/trim_adapters_single_end/{{sample}}.log",
-        shell:
-	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
+
+rule umis_single_end:
+    input:
+        lambda wildcards: get_raw_fastq(wildcards, strand=1)
+    output:
+        sample=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz']
+    threads:
+	    get_resource('umis_single_end', 'threads')
+    resources:
+	    mem_mb=get_resource('umis_single_end', 'mem_mb'),
+            runtime=get_resource('umis_single_end', 'runtime')
+    log:
+        f"{LOGDIR}/trim_adapters_single_end/{{sample}}.log",
+    shell:
+	    "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
 
 
-if umis:
-    rule umis_paired_end:
-        input:
-            f1=lambda wildcards: get_raw_fastq(wildcards, strand=1),
-            f2=lambda wildcards: get_raw_fastq(wildcards, strand=2)
-        output:
-            f1=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz'],
-            f2=[OUTDIR + '/' + dir + '/{sample}_R2.fastq.gz']
-        threads:
-            get_resource('umis_paired_end', 'threads')
-        resources:
-            mem_mb=get_resource('umis_paired_end', 'mem_mb'),
-            runtime=get_resource('umis_paired_end', 'runtime')
-        log:
-            f"{LOGDIR}/umis_paired_end/{{sample}}.log"
-        shell:
-            "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
+
+rule umis_paired_end:
+    input:
+        f1=lambda wildcards: get_raw_fastq(wildcards, strand=1),
+        f2=lambda wildcards: get_raw_fastq(wildcards, strand=2)
+    output:
+        f1=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz'],
+        f2=[OUTDIR + '/' + dir + '/{sample}_R2.fastq.gz']
+    threads:
+        get_resource('umis_paired_end', 'threads')
+    resources:
+        mem_mb=get_resource('umis_paired_end', 'mem_mb'),
+        runtime=get_resource('umis_paired_end', 'runtime')
+    log:
+        f"{LOGDIR}/umis_paired_end/{{sample}}.log"
+    shell:
+        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
 
 rule trim_adapters_single_end:
     input:
