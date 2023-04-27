@@ -2,13 +2,8 @@
 .test/data
 log
 log.txt*
-units.tsv
 samples.tsv
-config.yaml
-logs
-results
 resources/align
 test
-designmatrix.tsv
 Log.out
 logs_slurm

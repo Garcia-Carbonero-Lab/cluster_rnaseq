@@ -180,7 +180,7 @@ final_step = get_final_step()
 
 #### Load rules ####
 include: 'rules/common.smk'
-include: 'rules/qc.smk'
+include: "rules/qc.smk"
 include: 'rules/preprocess.smk'
 include: 'rules/index.smk'
 include: 'rules/align.smk'
@@ -292,7 +292,8 @@ def get_plots_input():
 # TARGET RULES
 rule all:
 	input:
-		get_plots_input()
+		get_plots_input(), 
+		flag=f"{LOGDIR}/md5.checked"
 
 
 rule index:

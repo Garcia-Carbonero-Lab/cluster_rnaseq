@@ -5,6 +5,8 @@ if downsampling:
 else:
     dir = "reads"
 
+umis = config["parameters"]["extract_umis"]["enabled"]
+
 ## Let stablish rule order whether data is single end or paired end
 if downsampling:
     if single_end:
@@ -16,6 +18,11 @@ if single_end:
     ruleorder: trim_adapters_single_end > trim_adapters_paired_end
 else:
     ruleorder: trim_adapters_paired_end > trim_adapters_single_end
+
+if single_end:
+    ruleorder: umis_single_end > umis_paired_end
+else:
+    ruleorder: umis_paired_end > umis_single_end
 
 def get_raw_fastq(wildcards,strand=1):
     if is_multi_lane(wildcards.sample):
@@ -40,7 +47,7 @@ rule concat_R1_reads:
         get_resource('concat', 'threads')
     resources:
         mem_mb=get_resource('concat', 'mem_mb'),
-        walltime=get_resource('concat', 'walltime')
+        runtime=get_resource('concat', 'runtime')
     shell: 'cat {input} > {output}'
 
 
@@ -52,9 +59,44 @@ rule concat_R2_reads:
         get_resource('concat', 'threads')
     resources:
         mem_mb=get_resource('concat', 'mem_mb'),
-        walltime=get_resource('concat', 'walltime')
+        runtime=get_resource('concat', 'runtime')
     shell: 'cat {input} > {output}'
 
+
+if umis:
+    rule umis_single_end:
+        input:
+            lambda wildcards: get_raw_fastq(wildcards, strand=1)
+        output:
+            sample=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz']
+        threads:
+	        get_resource('umis_single_end', 'threads')
+        resources:
+	        mem_mb=get_resource('umis_single_end', 'mem_mb'),
+                runtime=get_resource('umis_single_end', 'runtime')
+        log:
+            f"{LOGDIR}/trim_adapters_single_end/{{sample}}.log",
+        shell:
+	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
+
+
+if umis:
+    rule umis_paired_end:
+        input:
+            f1=lambda wildcards: get_raw_fastq(wildcards, strand=1),
+            f2=lambda wildcards: get_raw_fastq(wildcards, strand=2)
+        output:
+            f1=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz'],
+            f2=[OUTDIR + '/' + dir + '/{sample}_R2.fastq.gz']
+        threads:
+            get_resource('umis_paired_end', 'threads')
+        resources:
+            mem_mb=get_resource('umis_paired_end', 'mem_mb'),
+            runtime=get_resource('umis_paired_end', 'runtime')
+        log:
+            f"{LOGDIR}/umis_paired_end/{{sample}}.log"
+        shell:
+            "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
 
 rule trim_adapters_single_end:
     input:
@@ -68,7 +110,7 @@ rule trim_adapters_single_end:
         get_resource('trim_adapters_single_end', 'threads')
     resources:
         mem_mb=get_resource('trim_adapters_single_end', 'mem_mb'),
-        walltime=get_resource('trim_adapters_single_end', 'walltime')
+        runtime=get_resource('trim_adapters_single_end', 'runtime')
     params:
         adapters='ref=' + get_params('trimming','adapters'),
         extra=get_params('trimming', 'extra')
@@ -90,7 +132,7 @@ rule trim_adapters_paired_end:
         get_resource('trim_adapters_paired_end', 'threads')
     resources:
         mem_mb=get_resource('trim_adapters_paired_end', 'mem_mb'),
-        walltime=get_resource('trim_adapters_paired_end', 'walltime')
+        runtime=get_resource('trim_adapters_paired_end', 'runtime')
     params:
         adapters='ref=' + get_params('trimming','adapters'),
         extra=get_params('trimming', 'extra') + ' tpe tbo'
@@ -110,7 +152,7 @@ if downsampling:
             get_resource('downsample_single_end', 'threads')
         resources:
             mem_mb=get_resource('downsample_single_end', 'mem_mb'),
-            walltime=get_resource('downsample_single_end', 'walltime')
+            runtime=get_resource('downsample_single_end', 'runtime')
         params:
             n=get_params('downsampling', 'n'),
             seed=get_params('downsampling', 'seed')
@@ -132,7 +174,7 @@ if downsampling:
             get_resource('downsample_paired_end', 'threads')
         resources:
             mem_mb=get_resource('downsample_paired_end', 'mem_mb'),
-            walltime=get_resource('downsample_paired_end', 'walltime')
+            runtime=get_resource('downsample_paired_end', 'runtime')
         params:
             n=get_params('downsampling', 'n'),
             seed=get_params('downsampling', 'seed')
