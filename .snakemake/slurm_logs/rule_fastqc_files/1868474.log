@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=4096, mem_mib=3907, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=4096, mem_mib=3907, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Wed May  3 15:41:01 2023]
+rule fastqc_files:
+    input: /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/RAW/dcaceres_colonRNAseq_250423/bgc-182_MSI/bgc-182_MSI_S27_L001_R1_001.fastq.gz, logs/md5.checked
+    output: results/qc/fastqc_files/182_MSI_1_fq1_fastqc.html, results/qc/fastqc_files/182_MSI_1_fq1_fastqc.zip
+    log: logs/fastqc_files/182_MSI_1_fq1.log
+    jobid: 0
+    benchmark: logs/fastqc_files/182_MSI_1_fq1.bmk
+    reason: Missing output files: logs/fastqc_files/182_MSI_1_fq1.bmk, results/qc/fastqc_files/182_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/182_MSI_1_fq1_fastqc.html
+    wildcards: sample=182_MSI, lane=1, read=1
+    resources: mem_mb=4096, mem_mib=3907, disk_mb=1000, disk_mib=954, tmpdir=/tmp, runtime=10
+
+Activating conda environment: .snakemake/conda/8e1fb6bc093e2c705684656f93652704_
+[Wed May  3 15:41:28 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+[Wed May  3 15:41:31 2023]
+Finished job 0.
+1 of 1 steps (100%) done

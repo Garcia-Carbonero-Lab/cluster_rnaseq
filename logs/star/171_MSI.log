@@ -1,8 +1,8 @@
 	STAR --outSAMtype BAM SortedByCoordinate --runThreadN 8 --genomeDir /storage/scratch01/shared/indexes/h_sapiens/gencode/v38/star/2.7.10a --readFilesIn results/trimmed/171_MSI/171_MSI_R1.fastq.gz --readFilesCommand gunzip -c --outFileNamePrefix results/mapped/star/171_MSI/ --outStd Log
 	STAR version: 2.7.10b   compiled: 2022-11-01T09:53:26-04:00 :/home/dobin/data/STAR/STARcode/STAR.master/source
-May 03 12:48:49 ..... started STAR run
-May 03 12:48:50 ..... loading genome
-May 03 12:49:16 ..... started mapping
-May 03 12:52:11 ..... finished mapping
-May 03 12:52:12 ..... started sorting BAM
-May 03 12:53:09 ..... finished successfully
+May 03 15:50:46 ..... started STAR run
+May 03 15:50:47 ..... loading genome
+May 03 15:51:05 ..... started mapping
+May 03 15:54:42 ..... finished mapping
+May 03 15:54:44 ..... started sorting BAM
+May 03 15:55:37 ..... finished successfully

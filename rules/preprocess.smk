@@ -58,23 +58,37 @@ rule concat_R2_reads:
     shell: 'cat {input} > {output}'
 
 
+if extract_umis:
+    rule extract_umis_single_end:
+        input:
+            sample=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz']
+        output:
+            sample=[OUTDIR + '/' + dir + '/umis/{sample}_R1.fastq.gz']
+        threads:
+	        get_resource('extract_umis', 'threads')
+        resources:
+	        mem_mb=get_resource('extract_umis', 'mem_mb'),
+                runtime=get_resource('extract_umis', 'runtime')
+        log:
+            f"{LOGDIR}/extract_umis/{{sample}}.log",
+        shell:
+	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output}"
 
-rule extract_umis:
-    input:
-        sample=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz']
-    output:
-        sample=[OUTDIR + '/' + dir + '/umis/{sample}_R1.fastq.gz']
-    threads:
-	    get_resource('extract_umis', 'threads')
-    resources:
-	    mem_mb=get_resource('extract_umis', 'mem_mb'),
-            runtime=get_resource('extract_umis', 'runtime')
-    log:
-        f"{LOGDIR}/extract_umis/{{sample}}.log",
-    shell:
-	    "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output}"
-
-
+if extract_umis:
+    rule extract_umis_paired_end:
+        input:
+            sample=expand(OUTDIR + '/{dir}/{{sample}}_R{strand}.fastq.gz', dir=dir, strand=[1,2])
+        output:
+            sample=expand(OUTDIR + '/umis/{{sample}}/{{sample}}_R{strand}.fastq.gz', strand=[1,2])
+        threads:
+	        get_resource('extract_umis', 'threads')
+        resources:
+	        mem_mb=get_resource('extract_umis', 'mem_mb'),
+                runtime=get_resource('extract_umis', 'runtime')
+        log:
+            f"{LOGDIR}/extract_umis/{{sample}}.log",
+        shell:
+	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' --bc-pattern2='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output} --read2-in= {input} --read2-out={output}"
 
 
 rule trim_adapters_single_end:
@@ -101,7 +115,7 @@ rule trim_adapters_single_end:
 
 rule trim_adapters_paired_end:
     input:
-        sample=expand(OUTDIR + '/{dir}/{{sample}}_R{strand}.fastq.gz', dir=dir, strand=[1,2])
+        sample=expand(OUTDIR + '/{dir}/umis/{{sample}}_R{strand}.fastq.gz', dir=dir, strand=[1,2])
     output:
         trimmed=expand(OUTDIR + '/trimmed/{{sample}}/{{sample}}_R{strand}.fastq.gz', strand=[1,2]),
         singleton=OUTDIR + '/trimmed/{sample}/{sample}.single.fastq.gz',
