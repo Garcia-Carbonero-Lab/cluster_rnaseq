@@ -1,0 +1,25 @@
+java -ea -Xmx6554M -Xms6554M -cp /home/dcaceres/cluster_rnaseq/.snakemake/conda/8404c95e30e67f79886528e582d02a1e_/opt/bbmap-39.01-0/current/ jgi.BBDuk -Xmx6554M t=8 in=results/reads/umis/187_MSI_R1.fastq.gz ref=resources/trimming/adapters.fa ktrim=r k=13 mink=5 hdist=1 out=results/trimmed/187_MSI/187_MSI_R1.fastq.gz outs=results/trimmed/187_MSI/187_MSI.single.fastq.gz outm=results/trimmed/187_MSI/187_MSI.discarded.fastq.gz stats=results/trimmed/187_MSI/187_MSI.stats.txt
+Executing jgi.BBDuk [-Xmx6554M, t=8, in=results/reads/umis/187_MSI_R1.fastq.gz, ref=resources/trimming/adapters.fa, ktrim=r, k=13, mink=5, hdist=1, out=results/trimmed/187_MSI/187_MSI_R1.fastq.gz, outs=results/trimmed/187_MSI/187_MSI.single.fastq.gz, outm=results/trimmed/187_MSI/187_MSI.discarded.fastq.gz, stats=results/trimmed/187_MSI/187_MSI.stats.txt]
+Version 39.01
+
+Set threads to 8
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=6874m, total=6874m, free=6849m, used=25m
+
+Added 74134 kmers; time: 	0.056 seconds.
+Memory: max=6874m, total=6874m, free=6836m, used=38m
+
+Input is being processed as unpaired
+Started output streams:	0.107 seconds.
+Processing time:   		5.372 seconds.
+
+Input:                  	2561400 reads 		194666400 bases.
+KTrimmed:               	1941021 reads (75.78%) 	50800983 bases (26.10%)
+Total Removed:          	394251 reads (15.39%) 	50800983 bases (26.10%)
+Result:                 	2167149 reads (84.61%) 	143865417 bases (73.90%)
+
+Time:                         	5.580 seconds.
+Reads Processed:       2561k 	459.05k reads/sec
+Bases Processed:        194m 	34.89m bases/sec

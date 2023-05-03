@@ -293,7 +293,7 @@ def get_plots_input():
 rule all:
 	input:
 		get_plots_input(), 
-		flag=f"{LOGDIR}/md5.checked"
+		
 
 
 rule index:

@@ -5,10 +5,10 @@ samples: samples.tsv
 units: units.tsv
 
 # path to the results directory
-outdir: '~/cluster_rnaseq/results'
+outdir: 'results'
 
 # path to the logs directory
-logdir: '~/cluster_rnaseq/logs'
+logdir: 'logs'
 
 ## ALIGNER ##
 # 0 = STAR, 1 = SALMON, 2 = HISAT2
@@ -22,7 +22,7 @@ quantifier: 1
 # genomic reference sequences and annotations for aligners and quantifiers
 ref:
     star:
-        annotation: "/storage/scratch01/shared/genomes/h_sapiens/gencode/v38/gencode.v38.primary_assembly.annotation.gtf"
+        annotation: "/storage/scratch01/shared/genomes/h_sapiens/gencode/v38/gencode.v38.primary_assembly.annotation.gtf.gz"
         # fasta file with transcripts
         fasta: "/storage/scratch01/shared/genomes/h_sapiens/gencode/v38/GRCh38.primary_assembly.genome.fa"
         # STAR aligner index path (auto generated if not already present)
@@ -64,7 +64,7 @@ parameters:
     # By default fastq_screen is not performed. In case the user want to run
     # fastq_screen the enabled value must be set to True.
     fastq_screen:
-        enabled: True
+        enabled: False
 
     # Pre-built Bowtie2 indices of commonly used genomes may be downloaded 
     # directly from the Babraham Bioinformatics website. These genome indices 
@@ -145,16 +145,11 @@ resources:
         mem_mb:  8192
         runtime: 60
 
-    umis_single_end:
+    extract_umis:
         threads: 8
         mem_mb:  8192
         runtime: 60
         
-    umis_paired_end:
-        threads: 8
-        mem_mb:  8192
-        runtime: 60
-
     trim_adapters_single_end:
         threads: 8
         mem_mb:  8192

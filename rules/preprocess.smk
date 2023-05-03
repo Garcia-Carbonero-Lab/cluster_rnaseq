@@ -19,11 +19,6 @@ if single_end:
 else:
     ruleorder: trim_adapters_paired_end > trim_adapters_single_end
 
-if single_end:
-    ruleorder: umis_single_end > umis_paired_end
-else:
-    ruleorder: umis_paired_end > umis_single_end
-
 def get_raw_fastq(wildcards,strand=1):
     if is_multi_lane(wildcards.sample):
         return f'{OUTDIR}/reads/{wildcards.sample}_R{strand}.fastq.gz'
@@ -64,43 +59,27 @@ rule concat_R2_reads:
 
 
 
-rule umis_single_end:
+rule extract_umis:
     input:
-        lambda wildcards: get_raw_fastq(wildcards, strand=1)
-    output:
         sample=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz']
-    threads:
-	    get_resource('umis_single_end', 'threads')
-    resources:
-	    mem_mb=get_resource('umis_single_end', 'mem_mb'),
-            runtime=get_resource('umis_single_end', 'runtime')
-    log:
-        f"{LOGDIR}/trim_adapters_single_end/{{sample}}.log",
-    shell:
-	    "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
-
-
-
-rule umis_paired_end:
-    input:
-        f1=lambda wildcards: get_raw_fastq(wildcards, strand=1),
-        f2=lambda wildcards: get_raw_fastq(wildcards, strand=2)
     output:
-        f1=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz'],
-        f2=[OUTDIR + '/' + dir + '/{sample}_R2.fastq.gz']
+        sample=[OUTDIR + '/' + dir + '/umis/{sample}_R1.fastq.gz']
     threads:
-        get_resource('umis_paired_end', 'threads')
+	    get_resource('extract_umis', 'threads')
     resources:
-        mem_mb=get_resource('umis_paired_end', 'mem_mb'),
-        runtime=get_resource('umis_paired_end', 'runtime')
+	    mem_mb=get_resource('extract_umis', 'mem_mb'),
+            runtime=get_resource('extract_umis', 'runtime')
     log:
-        f"{LOGDIR}/umis_paired_end/{{sample}}.log"
+        f"{LOGDIR}/extract_umis/{{sample}}.log",
     shell:
-        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{6})(?P<discard_1>TATA).*' -I $folder/$name -S umis_$name"
+	    "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output}"
+
+
+
 
 rule trim_adapters_single_end:
     input:
-        sample=[OUTDIR + '/' + dir + '/{sample}_R1.fastq.gz']
+        sample=[OUTDIR + '/' + dir + '/umis/{sample}_R1.fastq.gz']
     output:
         trimmed=OUTDIR + '/trimmed/{sample}/{sample}_R1.fastq.gz',
         singleton=OUTDIR + '/trimmed/{sample}/{sample}.single.fastq.gz',

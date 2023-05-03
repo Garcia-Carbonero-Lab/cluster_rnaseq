@@ -1,0 +1,12 @@
+
+  /// MultiQC 🔍 | v1.11
+
+|           multiqc | MultiQC Version v1.14 now available!
+|           multiqc | Report title: CNIO Bioinformatics Unit RNA-seq QC.
+|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/qc/fastqc_files
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 176/176  
+|            fastqc | Found 88 reports
+|           multiqc | Compressing plot data
+|           multiqc | Report      : results/multiqc/multiqc_files_report.html
+|           multiqc | Data        : results/multiqc/multiqc_files_report_data
+|           multiqc | MultiQC complete
