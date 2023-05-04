@@ -1,25 +1,26 @@
-java -ea -Xmx6554M -Xms6554M -cp /home/dcaceres/cluster_rnaseq/.snakemake/conda/8404c95e30e67f79886528e582d02a1e_/opt/bbmap-39.01-0/current/ jgi.BBDuk -Xmx6554M t=8 in=results/reads/umis/120_MSI_R1.fastq.gz ref=resources/trimming/adapters.fa ktrim=r k=13 mink=5 hdist=1 out=results/trimmed/120_MSI/120_MSI_R1.fastq.gz outs=results/trimmed/120_MSI/120_MSI.single.fastq.gz outm=results/trimmed/120_MSI/120_MSI.discarded.fastq.gz stats=results/trimmed/120_MSI/120_MSI.stats.txt
-Executing jgi.BBDuk [-Xmx6554M, t=8, in=results/reads/umis/120_MSI_R1.fastq.gz, ref=resources/trimming/adapters.fa, ktrim=r, k=13, mink=5, hdist=1, out=results/trimmed/120_MSI/120_MSI_R1.fastq.gz, outs=results/trimmed/120_MSI/120_MSI.single.fastq.gz, outm=results/trimmed/120_MSI/120_MSI.discarded.fastq.gz, stats=results/trimmed/120_MSI/120_MSI.stats.txt]
+java -ea -Xmx6554M -Xms6554M -cp /home/dcaceres/cluster_rnaseq/.snakemake/conda/8404c95e30e67f79886528e582d02a1e_/opt/bbmap-39.01-0/current/ jgi.BBDuk -Xmx6554M t=8 in=results/reads/umis/120_MSI_R1.fastq.gz ref=resources/trimming/adapters.fa ktrim=r k=13 mink=5 hdist=1 useshortkmers=t qtrim=r trimq=10 minlength=20 out=results/trimmed/120_MSI/120_MSI_R1.fastq.gz outs=results/trimmed/120_MSI/120_MSI.single.fastq.gz outm=results/trimmed/120_MSI/120_MSI.discarded.fastq.gz stats=results/trimmed/120_MSI/120_MSI.stats.txt
+Executing jgi.BBDuk [-Xmx6554M, t=8, in=results/reads/umis/120_MSI_R1.fastq.gz, ref=resources/trimming/adapters.fa, ktrim=r, k=13, mink=5, hdist=1, useshortkmers=t, qtrim=r, trimq=10, minlength=20, out=results/trimmed/120_MSI/120_MSI_R1.fastq.gz, outs=results/trimmed/120_MSI/120_MSI.single.fastq.gz, outm=results/trimmed/120_MSI/120_MSI.discarded.fastq.gz, stats=results/trimmed/120_MSI/120_MSI.stats.txt]
 Version 39.01
 
 Set threads to 8
 maskMiddle was disabled because useShortKmers=true
-0.023 seconds.
+0.028 seconds.
 Initial:
 Memory: max=6874m, total=6874m, free=6849m, used=25m
 
-Added 74134 kmers; time: 	0.056 seconds.
-Memory: max=6874m, total=6874m, free=6832m, used=42m
+Added 75046 kmers; time: 	0.109 seconds.
+Memory: max=6874m, total=6874m, free=6836m, used=38m
 
 Input is being processed as unpaired
-Started output streams:	0.138 seconds.
-Processing time:   		48.515 seconds.
+Started output streams:	0.186 seconds.
+Processing time:   		50.107 seconds.
 
 Input:                  	13994643 reads 		1063592868 bases.
-KTrimmed:               	10002922 reads (71.48%) 	109701610 bases (10.31%)
-Total Removed:          	223948 reads (1.60%) 	109701610 bases (10.31%)
-Result:                 	13770695 reads (98.40%) 	953891258 bases (89.69%)
+QTrimmed:               	9713 reads (0.07%) 	256101 bases (0.02%)
+KTrimmed:               	10864944 reads (77.64%) 	221158239 bases (20.79%)
+Total Removed:          	1208935 reads (8.64%) 	221414340 bases (20.82%)
+Result:                 	12785708 reads (91.36%) 	842178528 bases (79.18%)
 
-Time:                         	48.778 seconds.
-Reads Processed:      13994k 	286.90k reads/sec
-Bases Processed:       1063m 	21.80m bases/sec
+Time:                         	50.629 seconds.
+Reads Processed:      13994k 	276.41k reads/sec
+Bases Processed:       1063m 	21.01m bases/sec

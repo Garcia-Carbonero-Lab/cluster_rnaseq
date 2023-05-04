@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=4096, mem_mib=3907, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=4096, mem_mib=3907, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu May  4 15:34:07 2023]
+rule multiqc_files:
+    input: results/qc/fastqc_files/104_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/104_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/104_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/104_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/112_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/112_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/112_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/112_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/162_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/162_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/162_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/162_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/164_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/164_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/164_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/164_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/167_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/167_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/167_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/167_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/195_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/195_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/195_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/195_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/56_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/56_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/56_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/56_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/116_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/116_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/116_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/116_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/150_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/150_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/150_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/150_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/168_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/168_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/168_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/168_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/175_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/175_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/175_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/175_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/183_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/183_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/183_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/183_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/184_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/184_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/184_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/184_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/187_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/187_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/187_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/187_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/226_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/226_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/226_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/226_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/115_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/115_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/115_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/115_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/120_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/120_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/120_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/120_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/121_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/121_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/121_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/121_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/171_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/171_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/171_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/171_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/173_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/173_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/173_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/173_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/182_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/182_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/182_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/182_MSI_4_fq1_fastqc.zip, results/qc/fastqc_files/218_MSI_1_fq1_fastqc.zip, results/qc/fastqc_files/218_MSI_2_fq1_fastqc.zip, results/qc/fastqc_files/218_MSI_3_fq1_fastqc.zip, results/qc/fastqc_files/218_MSI_4_fq1_fastqc.zip
+    output: results/multiqc/multiqc_files_report.html
+    log: logs/multiqc_files.log
+    jobid: 0
+    benchmark: logs/multiqc_files.bmk
+    reason: Missing output files: results/multiqc/multiqc_files_report.html, logs/multiqc_files.bmk
+    threads: 8
+    resources: mem_mb=4096, mem_mib=3907, disk_mb=1000, disk_mib=954, tmpdir=/tmp, runtime=10
+
+Activating conda environment: .snakemake/conda/d298a907baa1884fcea160a2062e3c7c_
+Activating conda environment: .snakemake/conda/d298a907baa1884fcea160a2062e3c7c_
+[Thu May  4 15:34:22 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+[Thu May  4 15:34:23 2023]
+Finished job 0.
+1 of 1 steps (100%) done

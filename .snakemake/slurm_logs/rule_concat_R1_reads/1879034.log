@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=4096, mem_mib=3907, disk_mb=1876, disk_mib=1790
+Select jobs to execute...
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=4096, mem_mib=3907, disk_mb=1876, disk_mib=1790
+Select jobs to execute...
+
+[Thu May  4 15:21:36 2023]
+rule concat_R1_reads:
+    input: /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/RAW/dcaceres_colonRNAseq_250423/bgc-218_MSI/bgc-218_MSI_S30_L001_R1_001.fastq.gz, /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/RAW/dcaceres_colonRNAseq_250423/bgc-218_MSI/bgc-218_MSI_S30_L002_R1_001.fastq.gz, /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/RAW/dcaceres_colonRNAseq_250423/bgc-218_MSI/bgc-218_MSI_S30_L003_R1_001.fastq.gz, /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/RAW/dcaceres_colonRNAseq_250423/bgc-218_MSI/bgc-218_MSI_S30_L004_R1_001.fastq.gz
+    output: results/reads/218_MSI_R1.fastq.gz
+    jobid: 0
+    reason: Missing output files: results/reads/218_MSI_R1.fastq.gz
+    wildcards: sample=218_MSI
+    resources: mem_mb=4096, mem_mib=3907, disk_mb=1876, disk_mib=1790, tmpdir=/tmp, runtime=10
+
+[Thu May  4 15:21:50 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+[Thu May  4 15:21:53 2023]
+Finished job 0.
+1 of 1 steps (100%) done
