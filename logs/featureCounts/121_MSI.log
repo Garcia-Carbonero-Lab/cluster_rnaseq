@@ -38,9 +38,9 @@
 || Process BAM file Aligned.sortedByCoord.out.bam...                          ||
 ||    Strand specific : stranded                                              ||
 ||    Single-end reads are included.                                          ||
-||    Total alignments : 19480917                                             ||
-||    Successfully assigned alignments : 3491201 (17.9%)                      ||
-||    Running time : 0.08 minutes                                             ||
+||    Total alignments : 19481896                                             ||
+||    Successfully assigned alignments : 3491209 (17.9%)                      ||
+||    Running time : 0.09 minutes                                             ||
 ||                                                                            ||
 || Write the final count table.                                               ||
 || Write the read assignment summary.                                         ||

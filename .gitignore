@@ -1,5 +1,4 @@
-.snakemake/conda
-.snakemake/metadata
+.snakemake
 envs
 .test/data
 log
@@ -11,4 +10,7 @@ Log.out
 logs_slurm
 res/ftp1.babraham.ac.uk
 ~
-results/*
+results/qc/*/*.zip
+results/reads/
+results/trimmed/*/*.gz
+results/mapped

@@ -107,6 +107,7 @@ rule trim_adapters_single_end:
     params:
         adapters='ref=' + get_params('trimming','adapters'),
         extra=get_params('trimming', 'extra')
+        
     log:
         f"{LOGDIR}/trim_adapters_single_end/{{sample}}.log",
     wrapper:

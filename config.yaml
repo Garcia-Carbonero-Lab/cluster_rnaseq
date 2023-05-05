@@ -60,7 +60,8 @@ parameters:
     trimming:
         adapters: "resources/trimming/adapters.fa"
         extra: " ktrim=r k=13 mink=5 hdist=1 useshortkmers=t qtrim=r trimq=10 minlength=20"
-
+        
+ 
     # By default fastq_screen is not performed. In case the user want to run
     # fastq_screen the enabled value must be set to True.
     fastq_screen:

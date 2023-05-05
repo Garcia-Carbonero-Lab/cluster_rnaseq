@@ -4,23 +4,23 @@ Version 39.01
 
 Set threads to 8
 maskMiddle was disabled because useShortKmers=true
-0.045 seconds.
+0.027 seconds.
 Initial:
 Memory: max=6874m, total=6874m, free=6849m, used=25m
 
-Added 75046 kmers; time: 	0.328 seconds.
-Memory: max=6874m, total=6874m, free=6834m, used=40m
+Added 74763 kmers; time: 	0.092 seconds.
+Memory: max=6874m, total=6874m, free=6836m, used=38m
 
 Input is being processed as unpaired
-Started output streams:	0.398 seconds.
-Processing time:   		36.819 seconds.
+Started output streams:	0.208 seconds.
+Processing time:   		32.806 seconds.
 
 Input:                  	14740958 reads 		1120312808 bases.
 QTrimmed:               	5335 reads (0.04%) 	140334 bases (0.01%)
-KTrimmed:               	13373682 reads (90.72%) 	671241001 bases (59.92%)
-Total Removed:          	7286171 reads (49.43%) 	671381335 bases (59.93%)
-Result:                 	7454787 reads (50.57%) 	448931473 bases (40.07%)
+KTrimmed:               	13373622 reads (90.72%) 	671219865 bases (59.91%)
+Total Removed:          	7285981 reads (49.43%) 	671360199 bases (59.93%)
+Result:                 	7454977 reads (50.57%) 	448952609 bases (40.07%)
 
-Time:                         	37.631 seconds.
-Reads Processed:      14740k 	391.72k reads/sec
-Bases Processed:       1120m 	29.77m bases/sec
+Time:                         	33.292 seconds.
+Reads Processed:      14740k 	442.77k reads/sec
+Bases Processed:       1120m 	33.65m bases/sec
