@@ -1,8 +1,0 @@
-	/home/dcaceres/cluster_rnaseq/.snakemake/conda/7b576a28cad8700e71840c23613d34d7_/bin/STAR-avx2 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --genomeDir /storage/scratch01/shared/indexes/h_sapiens/gencode/v38/star/2.7.10a --readFilesIn /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/112_MSI/112_MSI_R1.fastq.gz --readFilesCommand gunzip -c --outFileNamePrefix /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/112_MSI/ --outStd Log
-	STAR version: 2.7.10b   compiled: 2023-05-25T06:56:23+0000 :/opt/conda/conda-bld/star_1684997536154/work/source
-May 29 21:42:09 ..... started STAR run
-May 29 21:42:09 ..... loading genome
-May 29 21:42:20 ..... started mapping
-May 29 21:43:26 ..... finished mapping
-May 29 21:43:26 ..... started sorting BAM
-May 29 21:43:35 ..... finished successfully
