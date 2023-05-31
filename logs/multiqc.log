@@ -3,58 +3,114 @@
 
 |           multiqc | MultiQC Version v1.14 now available!
 |           multiqc | Report title: CNIO Bioinformatics Unit RNA-seq QC.
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/187_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/167_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/56_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/150_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/182_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/116_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/183_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/112_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/184_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/quant/star/featureCounts
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/173_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/162_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/167_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/226_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/104_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/195_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/104_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/115_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/120_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/171_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/218_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/171_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/175_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/195_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/120_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/116_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/184_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/115_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/112_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/qc/fastqc_concat
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/164_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/121_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/183_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/218_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/56_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/168_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/150_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/162_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/168_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/182_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/173_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/187_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/121_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/175_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/trimmed/164_MSI
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/mapped/star/226_MSI
-|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 286/286  
-|    feature_counts | Found 22 reports
-|             bbmap | Found 22 reports
-|              star | Found 22 reports
-|            fastqc | Found 22 reports
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/26_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/226_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/20_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/221_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/8_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/23_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/122_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/162_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/110_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/120_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/167_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/115_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/171_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/198_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/11_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/quant/star/htseq
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/146_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/182_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/56_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/104_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/186_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/20_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/145_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/11_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/qc/fastqc_concat
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/56_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/156_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/195_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/162_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/168_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/112_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/116_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/120_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/3_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/122_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/112_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/173_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/133_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/23_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/187_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/152_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/171_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/116_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/111_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/124_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/14_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/198_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/131_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/40_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/167_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/185_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/150_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/156_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/164_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/110_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/217_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/111_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/152_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/15_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/173_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/237_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/175_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/182_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/121_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/218_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/217_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/226_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/186_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/187_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/196_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/183_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/145_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/150_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/121_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/164_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/118_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/3_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/201_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/131_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/196_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/237_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/104_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/168_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/26_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/14_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/184_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/183_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/15_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/146_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/118_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/195_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/115_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/221_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/201_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/185_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/124_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/8_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/133_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/175_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/184_MSI
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/40_MSI
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 650/650  
+|             htseq | Found 50 reports
+|             bbmap | Found 50 reports
+|              star | Found 50 reports
+|            fastqc | Found 50 reports
 |           multiqc | Compressing plot data
-|           multiqc | Report      : results/multiqc/multiqc_run_report.html
-|           multiqc | Data        : results/multiqc/multiqc_run_report_data
+|           multiqc | Report      : ../../../storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/multiqc/multiqc_run_report.html
+|           multiqc | Data        : ../../../storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/multiqc/multiqc_run_report_data
 |           multiqc | MultiQC complete

@@ -5,7 +5,7 @@ samples: samples.tsv
 units: units.tsv
 
 # path to the results directory
-outdir: 'results'
+outdir: '/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results'
 
 # path to the logs directory
 logdir: 'logs'
@@ -16,7 +16,7 @@ aligner: 0
 
 ## QUANTIFIER ##
 # 0 = HTSEQ, 1 = FEATURECOUNTS
-quantifier: 1
+quantifier: 0
 
 
 # genomic reference sequences and annotations for aligners and quantifiers
@@ -150,6 +150,17 @@ resources:
         threads: 8
         mem_mb:  8192
         runtime: 60
+
+    umi_group:
+        threads: 12
+        mem_mb:  32000
+        runtime: 360
+
+    dedup:
+        threads: 12
+        mem_mb:  32000
+        runtime: 360
+    
         
     trim_adapters_single_end:
         threads: 8

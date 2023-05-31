@@ -1,8 +1,8 @@
-	STAR --outSAMtype BAM SortedByCoordinate --runThreadN 8 --genomeDir /storage/scratch01/shared/indexes/h_sapiens/gencode/v38/star/2.7.10a --readFilesIn results/trimmed/115_MSI/115_MSI_R1.fastq.gz --readFilesCommand gunzip -c --outFileNamePrefix results/mapped/star/115_MSI/ --outStd Log
-	STAR version: 2.7.10b   compiled: 2022-11-01T09:53:26-04:00 :/home/dobin/data/STAR/STARcode/STAR.master/source
-May 05 12:52:42 ..... started STAR run
-May 05 12:52:42 ..... loading genome
-May 05 12:52:55 ..... started mapping
-May 05 12:54:14 ..... finished mapping
-May 05 12:54:15 ..... started sorting BAM
-May 05 12:54:32 ..... finished successfully
+	/home/dcaceres/cluster_rnaseq/.snakemake/conda/7b576a28cad8700e71840c23613d34d7_/bin/STAR-avx2 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --genomeDir /storage/scratch01/shared/indexes/h_sapiens/gencode/v38/star/2.7.10a --readFilesIn /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/115_MSI/115_MSI_R1.fastq.gz --readFilesCommand gunzip -c --outFileNamePrefix /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/mapped/star/115_MSI/ --outStd Log
+	STAR version: 2.7.10b   compiled: 2023-05-25T06:56:23+0000 :/opt/conda/conda-bld/star_1684997536154/work/source
+May 29 21:33:28 ..... started STAR run
+May 29 21:33:28 ..... loading genome
+May 29 21:33:39 ..... started mapping
+May 29 21:34:41 ..... finished mapping
+May 29 21:34:41 ..... started sorting BAM
+May 29 21:34:47 ..... finished successfully

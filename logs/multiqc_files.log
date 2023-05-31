@@ -3,10 +3,13 @@
 
 |           multiqc | MultiQC Version v1.14 now available!
 |           multiqc | Report title: CNIO Bioinformatics Unit RNA-seq QC.
-|           multiqc | Search path : /home/dcaceres/cluster_rnaseq/results/qc/fastqc_files
-|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 176/176  
-|            fastqc | Found 88 reports
+|           multiqc | Search path : /storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/qc/fastqc_files
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 400/400  
+|            fastqc | Found 200 reports
 |           multiqc | Compressing plot data
-|           multiqc | Report      : results/multiqc/multiqc_files_report.html
-|           multiqc | Data        : results/multiqc/multiqc_files_report_data
+|           multiqc | Report      : ../../../storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/multiqc/multiqc_files_report.html
+|           multiqc | Data        : ../../../storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/multiqc/multiqc_files_report_data
 |           multiqc | MultiQC complete
+|           multiqc | 8 flat-image plots used in the report due to large sample numbers
+|           multiqc | To force interactive plots, use the '--interactive' flag. 
+See the documentation.

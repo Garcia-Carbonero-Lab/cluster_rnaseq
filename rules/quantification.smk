@@ -24,11 +24,47 @@ rule bam_indexing:
         'samtools index -@ {threads} {input.aligned}'
 
 
+rule bam_indexing_dedup:
+    input:
+        aligned=f"{OUTDIR}/mapped/{chosen_aligner}/umi_grouped/{{sample}}/Aligned.sortedByCoord.umi_grouped.out.bam"
+    output:
+        bai_index=f"{OUTDIR}/mapped/{chosen_aligner}/umi_grouped/{{sample}}/Aligned.sortedByCoord.umi_grouped.out.bam.bai"
+    log:
+        f"{LOGDIR}/bam_indexing_dedup/{{sample}}.log"
+    threads:
+        get_resource("bam_indexing", "threads")
+    resources:
+        mem_mb=get_resource('bam_indexing', 'mem_mb'),
+        runtime=get_resource('bam_indexing', 'runtime')
+    conda:
+        '../envs/aligners.yaml'
+    shell:
+        'samtools index -@ {threads} {input.aligned}'
+
+
+rule bam_indexing_dedupHTSEQ:
+    input:
+        aligned=f"{OUTDIR}/mapped/{chosen_aligner}/dedup/{{sample}}/Aligned.sortedByCoord.dedup.out.bam"
+    output:
+        bai_index=f"{OUTDIR}/mapped/{chosen_aligner}/dedup/{{sample}}/Aligned.sortedByCoord.dedup.out.bam.bai"
+    log:
+        f"{LOGDIR}/bam_indexing_dedup/{{sample}}.log"
+    threads:
+        get_resource("bam_indexing", "threads")
+    resources:
+        mem_mb=get_resource('bam_indexing', 'mem_mb'),
+        runtime=get_resource('bam_indexing', 'runtime')
+    conda:
+        '../envs/aligners.yaml'
+    shell:
+        'samtools index -@ {threads} {input.aligned}'
+
+
 ### HTSEQ COUNT ###
 rule htseq_count:
     input:
-        bam_file=f"{OUTDIR}/mapped/{chosen_aligner}/{{sample}}/Aligned.sortedByCoord.out.bam",
-        bai_index=f"{OUTDIR}/mapped/{chosen_aligner}/{{sample}}/Aligned.sortedByCoord.out.bam.bai"
+        bam_file=f"{OUTDIR}/mapped/{chosen_aligner}/dedup/{{sample}}/Aligned.sortedByCoord.dedup.out.bam",
+        bai_index=f"{OUTDIR}/mapped/{chosen_aligner}/dedup/{{sample}}/Aligned.sortedByCoord.dedup.out.bam.bai"
     output:
         quant=f"{OUTDIR}/quant/{chosen_aligner}/htseq/{{sample}}.tab"
     threads:
@@ -50,8 +86,7 @@ rule htseq_count:
 
 rule htseq_count_matrix:
     input:
-        quant=expand(f"{OUTDIR}/quant/{chosen_aligner}/htseq/{{sample}}.tab", \
-                     sample=samples['sample'])
+        quant=f"{OUTDIR}/quant/{chosen_aligner}/htseq/{{sample}}.tab"
     output:
         counts=f"{OUTDIR}/deseq2/{chosen_aligner}/htseq/counts.tsv"
     threads:
@@ -69,7 +104,7 @@ rule htseq_count_matrix:
 ### FEATURECOUNTS ###
 rule featurecounts:
     input:
-        bam_file= f"{OUTDIR}/mapped/{chosen_aligner}/{{sample}}/Aligned.sortedByCoord.out.bam"
+        bam_file= f"{OUTDIR}/mapped/{chosen_aligner}/dedup/{{sample}}/Aligned.sortedByCoord.dedup.out.bam"
     output:
         quant=f"{OUTDIR}/quant/{chosen_aligner}/featureCounts/{{sample}}.tab",
         quant_summary=f"{OUTDIR}/quant/{chosen_aligner}/featureCounts/{{sample}}.tab.summary"

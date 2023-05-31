@@ -1,19 +1,19 @@
-java -ea -Xmx6554M -Xms6554M -cp /home/dcaceres/cluster_rnaseq/.snakemake/conda/8404c95e30e67f79886528e582d02a1e_/opt/bbmap-39.01-0/current/ jgi.BBDuk -Xmx6554M t=8 in=results/reads/umis/218_MSI_R1.fastq.gz ref=resources/trimming/adapters.fa ktrim=r k=13 mink=5 hdist=1 useshortkmers=t qtrim=r trimq=10 minlength=20 out=results/trimmed/218_MSI/218_MSI_R1.fastq.gz outs=results/trimmed/218_MSI/218_MSI.single.fastq.gz outm=results/trimmed/218_MSI/218_MSI.discarded.fastq.gz stats=results/trimmed/218_MSI/218_MSI.stats.txt
-Executing jgi.BBDuk [-Xmx6554M, t=8, in=results/reads/umis/218_MSI_R1.fastq.gz, ref=resources/trimming/adapters.fa, ktrim=r, k=13, mink=5, hdist=1, useshortkmers=t, qtrim=r, trimq=10, minlength=20, out=results/trimmed/218_MSI/218_MSI_R1.fastq.gz, outs=results/trimmed/218_MSI/218_MSI.single.fastq.gz, outm=results/trimmed/218_MSI/218_MSI.discarded.fastq.gz, stats=results/trimmed/218_MSI/218_MSI.stats.txt]
+java -ea -Xmx6554M -Xms6554M -cp /home/dcaceres/cluster_rnaseq/.snakemake/conda/8404c95e30e67f79886528e582d02a1e_/opt/bbmap-39.01-1/current/ jgi.BBDuk -Xmx6554M t=8 in=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/reads/umis/218_MSI_R1.fastq.gz ref=resources/trimming/adapters.fa ktrim=r k=13 mink=5 hdist=1 useshortkmers=t qtrim=r trimq=10 minlength=20 out=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI_R1.fastq.gz outs=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI.single.fastq.gz outm=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI.discarded.fastq.gz stats=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI.stats.txt
+Executing jgi.BBDuk [-Xmx6554M, t=8, in=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/reads/umis/218_MSI_R1.fastq.gz, ref=resources/trimming/adapters.fa, ktrim=r, k=13, mink=5, hdist=1, useshortkmers=t, qtrim=r, trimq=10, minlength=20, out=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI_R1.fastq.gz, outs=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI.single.fastq.gz, outm=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI.discarded.fastq.gz, stats=/storage/scratch01/users/dcaceres/MSI_RNAseq_Arantxa/results/trimmed/218_MSI/218_MSI.stats.txt]
 Version 39.01
 
 Set threads to 8
 maskMiddle was disabled because useShortKmers=true
-0.562 seconds.
+0.018 seconds.
 Initial:
 Memory: max=6874m, total=6874m, free=6849m, used=25m
 
-Added 74763 kmers; time: 	0.527 seconds.
-Memory: max=6874m, total=6874m, free=6834m, used=40m
+Added 74763 kmers; time: 	0.067 seconds.
+Memory: max=6874m, total=6874m, free=6832m, used=42m
 
 Input is being processed as unpaired
-Started output streams:	1.655 seconds.
-Processing time:   		77.061 seconds.
+Started output streams:	0.070 seconds.
+Processing time:   		28.963 seconds.
 
 Input:                  	15479813 reads 		1176465788 bases.
 QTrimmed:               	9411 reads (0.06%) 	244096 bases (0.02%)
@@ -21,6 +21,6 @@ KTrimmed:               	12879942 reads (83.20%) 	368863729 bases (31.35%)
 Total Removed:          	2699997 reads (17.44%) 	369107825 bases (31.37%)
 Result:                 	12779816 reads (82.56%) 	807357963 bases (68.63%)
 
-Time:                         	79.311 seconds.
-Reads Processed:      15479k 	195.18k reads/sec
-Bases Processed:       1176m 	14.83m bases/sec
+Time:                         	29.134 seconds.
+Reads Processed:      15479k 	531.33k reads/sec
+Bases Processed:       1176m 	40.38m bases/sec

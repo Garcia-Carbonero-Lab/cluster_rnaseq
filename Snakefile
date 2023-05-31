@@ -187,6 +187,8 @@ include: 'rules/align.smk'
 include: 'rules/quantification.smk'
 include: 'rules/deseq2.smk'
 include: 'rules/plots.smk'
+include: 'rules/umi.smk'
+
 
 
 def get_index_input():
