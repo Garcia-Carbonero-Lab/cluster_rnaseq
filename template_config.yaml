@@ -5,7 +5,7 @@ samples: samples.tsv
 units: units.tsv
 
 # path to the results directory
-outdir: 'results'
+outdir: outdir
 
 # path to the logs directory
 logdir: 'logs'
@@ -16,19 +16,20 @@ aligner: 0
 
 ## QUANTIFIER ##
 # 0 = HTSEQ, 1 = FEATURECOUNTS
-quantifier: 1
+quantifier: 0
 
 
 # genomic reference sequences and annotations for aligners and quantifiers
 ref:
     star:
-        annotation: "/my/annotation.gtf"
+        annotation: "/storage/scratch01/shared/genomes/h_sapiens/gencode/v38/gencode.v38.primary_assembly.annotation.gtf.gz"
         # fasta file with transcripts
-        fasta: "/my/genome.fasta"
+        fasta: "/storage/scratch01/shared/genomes/h_sapiens/gencode/v38/GRCh38.primary_assembly.genome.fa"
         # STAR aligner index path (auto generated if not already present)
         # Deafult: Cluster's shared index
         #star_index: "/storage/scratch01/shared/indexes/h_sapiens/gencode/v38/star/2.7.9a"
-        star_index: "/my/genome_idx"
+        star_index: "/storage/scratch01/shared/indexes/h_sapiens/gencode/v38/star/2.7.10a"
+        extra: "--outFilterType BySJout --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverLmax 0.6 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000"
     
     salmon: 
        # salmon transcriptome: .fa.gz
@@ -54,10 +55,14 @@ parameters:
         n: 10000000 # Downsample to 10 million reads
         seed: 12345
 
+    extract_umis:
+        enabled: True # Custom removal of umis
+
     trimming:
         adapters: "resources/trimming/adapters.fa"
-        extra: " ktrim=r k=23 mink=11 hdist=1"
-
+        extra: " ktrim=r k=13 mink=5 hdist=1 useshortkmers=t qtrim=r trimq=10 minlength=20"
+        
+ 
     # By default fastq_screen is not performed. In case the user want to run
     # fastq_screen the enabled value must be set to True.
     fastq_screen:
@@ -84,7 +89,7 @@ parameters:
 
     htseq-count:
         # Mode: "union", "intersection-strict" or "intersection-nonempty" (default: union)
-        mode: "-m union"
+        mode: "-m intersection-nonempty"
         # Strandness: "yes", "no" or "reverse" (default: yes)
         strandedness: "-s yes"
 
@@ -97,7 +102,7 @@ parameters:
     deseq2:
         # path or URL to design matrix
         designmatrix: "designmatrix.tsv"
-        design: "~date + condition"
+        design: "~ condition"
 
 
 
@@ -105,144 +110,160 @@ resources:
     default:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
    
     fastqc:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
 
     fastq_screen:
         threads: 8
         mem_mb: 4096
-        walltime: 10
+        runtime: 10
 
     fastq_screen_indexes:
         threads: 32
         mem_mb: 64000
-        walltime: 180
+        runtime: 180
 
     multiqc:
         threads: 8
-        mem_mb:  4096
-        walltime: 10
+        mem_mb:  8192
+        runtime: 10
 
     concat:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
 
     downsample_single_end:
         threads: 1
         mem_mb:  8192
-        walltime: 60
+        runtime: 60
     
     downsample_paired_end:
         threads: 1
         mem_mb:  8192
-        walltime: 60
+        runtime: 60
 
+    extract_umis:
+        threads: 8
+        mem_mb:  8192
+        runtime: 120
+
+    umi_group:
+        threads: 12
+        mem_mb:  32000
+        runtime: 360
+
+    dedup:
+        threads: 12
+        mem_mb:  32000
+        runtime: 360
+    
+        
     trim_adapters_single_end:
         threads: 8
         mem_mb:  8192
-        walltime: 60
+        runtime: 120
         
     trim_adapters_paired_end:
         threads: 8
         mem_mb:  8192
-        walltime: 60
+        runtime: 60
  
     salmon_quant:
         threads: 20
         mem_mb: 32000
-        walltime: 10
+        runtime: 10
 
     star_align:
         threads: 8
         mem_mb: 64000
-        walltime: 60
+        runtime: 60
 
     hisat2_align:
         threads: 8
         mem_mb: 64000
-        walltime: 60
+        runtime: 60
     
     hisat2_sort:
         threads: 8
         mem_mb:  64000
-        walltime: 60
+        runtime: 60
 
     bam_indexing:
         threads: 8
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
         
     htseq_count:
         threads: 8
         mem_mb:  64000
-        walltime: 120
+        runtime: 120
 
     featureCounts:
         threads: 8
         mem_mb:  64000
-        walltime: 120
+        runtime: 120
     
     fcounts_count_matrix:
         threads: 8
         mem_mb:  64000
-        walltime: 120
+        runtime: 120
     
     salmon_matrix_from_quants:
         threads: 1
         mem_mb: 4096
-        walltime: 10
+        runtime: 10
         
     salmon_index:
         threads: 32
         mem_mb: 64000
-        walltime: 180
+        runtime: 180
 
     star_index:
         threads: 8
         mem_mb: 64000
-        walltime: 720
+        runtime: 720
 
     hisat2_index:
         threads: 32
         mem_mb: 64000
-        walltime: 180
+        runtime: 180
     
     htseq_count_matrix:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
     
     deseq2_init:
         threads: 4
         mem_mb:  8192
-        walltime: 10
+        runtime: 10
     
     deseq2_diffexp:
         threads: 2
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
     
     pca:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
     
     ma:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
 
     distance:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10
 
     expression_heatmap:
         threads: 1
         mem_mb:  4096
-        walltime: 10
+        runtime: 10

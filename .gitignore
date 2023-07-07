@@ -16,3 +16,7 @@ results/qc/*/*.zip
 results/reads/
 results/trimmed/*/*.gz
 results/mapped
+units*
+samples*
+config*
+designmatrix.tsv

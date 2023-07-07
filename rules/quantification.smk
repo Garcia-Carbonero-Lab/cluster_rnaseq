@@ -86,7 +86,7 @@ rule htseq_count:
 
 rule htseq_count_matrix:
     input:
-        quant=f"{OUTDIR}/quant/{chosen_aligner}/htseq/{{sample}}.tab"
+        quant=expand(f"{OUTDIR}/quant/{chosen_aligner}/htseq/{{sample}}.tab", sample=samples['sample'])
     output:
         counts=f"{OUTDIR}/deseq2/{chosen_aligner}/htseq/counts.tsv"
     threads:
