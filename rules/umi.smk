@@ -15,7 +15,7 @@ rule umi_group:
         f"{LOGDIR}/umi_group/{{sample}}.log",
 
     shell:
-	    "umi_tools group --method unique --output-bam -I {input.aligned} -S {output.grouped}"
+	    "umi_tools group --method unique --output-bam -I {input.aligned} -S {output.grouped} --log={log}"
 
 
 rule dedup:
@@ -34,4 +34,4 @@ rule dedup:
         f"{LOGDIR}/dedup/{{sample}}.log",
 
     shell:
-	    "umi_tools dedup --method unique -I {input.grouped} -S {output.deduped}"
+	    "umi_tools dedup --method unique -I {input.grouped} -S {output.deduped} --log={log}"

@@ -72,7 +72,7 @@ if extract_umis:
         log:
             f"{LOGDIR}/extract_umis/{{sample}}.log",
         shell:
-	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output}"
+	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output} --log={log}"
 
 if extract_umis:
     rule extract_umis_paired_end:
@@ -88,7 +88,7 @@ if extract_umis:
         log:
             f"{LOGDIR}/extract_umis/{{sample}}.log",
         shell:
-	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' --bc-pattern2='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output} --read2-in= {input} --read2-out={output}"
+	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' --bc-pattern2='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output} --read2-in= {input} --read2-out={output} --log={log}"
 
 
 rule trim_adapters_single_end:
