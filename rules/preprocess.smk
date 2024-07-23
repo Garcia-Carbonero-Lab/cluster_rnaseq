@@ -65,14 +65,14 @@ if extract_umis:
         output:
             sample=[OUTDIR + '/' + dir + '/umis/{sample}_R1.fastq.gz']
         threads:
-	        get_resource('extract_umis', 'threads')
+            get_resource('extract_umis', 'threads')
         resources:
-	        mem_mb=get_resource('extract_umis', 'mem_mb'),
-                runtime=get_resource('extract_umis', 'runtime')
+            mem_mb=get_resource('extract_umis', 'mem_mb'),
+            runtime=get_resource('extract_umis', 'runtime')
         log:
             f"{LOGDIR}/extract_umis/{{sample}}.log",
         shell:
-	        "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output} --log={log}"
+            "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output} --log={log}"
 
 if extract_umis:
     rule extract_umis_paired_end:
@@ -83,8 +83,8 @@ if extract_umis:
         threads:
 	        get_resource('extract_umis', 'threads')
         resources:
-	        mem_mb=get_resource('extract_umis', 'mem_mb'),
-                runtime=get_resource('extract_umis', 'runtime')
+            mem_mb=get_resource('extract_umis', 'mem_mb'),
+            runtime=get_resource('extract_umis', 'runtime')
         log:
             f"{LOGDIR}/extract_umis/{{sample}}.log",
         shell:
