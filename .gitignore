@@ -1,5 +1,4 @@
 .snakemake
-envs
 .test/data
 logs
 log.txt*

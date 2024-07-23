@@ -1,0 +1,8 @@
+name: umis
+channels:
+  - conda-forge
+  - bioconda
+  - r
+  - defaults
+dependencies:
+  - umi_tools

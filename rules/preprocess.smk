@@ -71,6 +71,8 @@ if extract_umis:
             runtime=get_resource('extract_umis', 'runtime')
         log:
             f"{LOGDIR}/extract_umis/{{sample}}.log",
+        conda:
+            "../envs/umis.yaml"
         shell:
             "umi_tools extract --random-seed 1234 --extract-method=regex --bc-pattern='(?P<umi_1>.{{6}})(?P<discard_1>TATA).*' -I {input} -S {output} --log={log}"
 
