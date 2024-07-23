@@ -13,7 +13,8 @@ rule umi_group:
             runtime=get_resource('umi_group', 'runtime')        
     log:
         f"{LOGDIR}/umi_group/{{sample}}.log",
-
+    conda:
+        "../envs/umis.yaml"        
     shell:
 	    "umi_tools group --method unique --output-bam -I {input.aligned} -S {output.grouped} --log={log}"
 
@@ -32,6 +33,7 @@ rule dedup:
             runtime=get_resource('dedup', 'runtime')        
     log:
         f"{LOGDIR}/dedup/{{sample}}.log",
-
+    conda:
+        "../envs/umis.yaml"
     shell:
 	    "umi_tools dedup --method unique -I {input.grouped} -S {output.deduped} --log={log}"
