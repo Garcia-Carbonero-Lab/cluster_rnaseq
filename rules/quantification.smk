@@ -1,7 +1,7 @@
 def featurecounts_args(sample):
     pars = ""
     if single_end == False:
-        pars = "-p"
+        pars = "-p --countReadPairs"
     return pars
 
 
