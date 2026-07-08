@@ -149,17 +149,17 @@ rule fastq_screen_indexes:
 # Fastq_screen for single files.
 
 rule fastq_screen_files:
-    input: 
-        fastq= lambda wc: units.loc(axis=0)[(wc.sample,wc.lane)]['fq' + wc.read],
+    input:
+        fastq=lambda wc: units.loc(axis=0)[(wc.sample, wc.lane)]['fq' + wc.read],
         conf="{}/FastQ_Screen_Genomes/fastq_screen.conf".format(config["parameters"]["fastq_screen_indexes"]["outdir"])
     output:
         txt=f"{OUTDIR}/fastq_screen/fastq_screen_files/{{sample}}_{{lane}}_fq{{read}}_fastq_screen.txt",
         png=f"{OUTDIR}/fastq_screen/fastq_screen_files/{{sample}}_{{lane}}_fq{{read}}_fastq_screen.png"
-    threads: 
-        get_resource("fastq_screen","threads")
+    threads:
+        get_resource("fastq_screen", "threads")
     resources:
-        mem_mb=get_resource("fastq_screen","mem_mb"),
-        runtime=get_resource("fastq_screen","runtime")
+        mem_mb=get_resource("fastq_screen", "mem_mb"),
+        runtime=get_resource("fastq_screen", "runtime")
     params:
         fastq_screen_config="{}/FastQ_Screen_Genomes/fastq_screen.conf".format(config["parameters"]["fastq_screen_indexes"]["outdir"]),
         subset=100000,
@@ -168,8 +168,10 @@ rule fastq_screen_files:
         f"{LOGDIR}/fastq_screen_files/{{sample}}_{{lane}}_fq{{read}}.log"
     benchmark:
         f"{LOGDIR}/fastq_screen_files/{{sample}}_{{lane}}_fq{{read}}.bmk"
-    wrapper:
-        "v1.23.4/bio/fastq_screen"
+    conda:
+        "envs/fastq_screen.yaml"
+    script:
+        "scripts/fastq_screen.py"
 
 
 rule multiqc_files:
