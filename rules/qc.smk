@@ -169,7 +169,7 @@ rule fastq_screen_files:
     benchmark:
         f"{LOGDIR}/fastq_screen_files/{{sample}}_{{lane}}_fq{{read}}.bmk"
     conda:
-        "envs/fastq_screen.yaml"
+        "../envs/fastq_screen.yaml"
     script:
         "scripts/fastq_screen.py"
 
@@ -203,19 +203,22 @@ rule fastqc_concat:
     output:
         html=f"{OUTDIR}/qc/fastqc_concat/{{sample}}_R{{read}}_fastqc.html",
         zip=f"{OUTDIR}/qc/fastqc_concat/{{sample}}_R{{read}}_fastqc.zip"
-    threads: 
-        get_resource("fastqc","threads")
+    threads:
+        get_resource("fastqc", "threads")
     resources:
-        mem_mb=get_resource("fastqc","mem_mb"),
-        runtime=get_resource("fastqc","runtime")
-    params: 
-        lambda wc: "-t {}".format(get_resource("fastqc","threads"))
+        mem_mb=get_resource("fastqc", "mem_mb"),
+        runtime=get_resource("fastqc", "runtime")
+    params:
+        extra="",
+        mem_overhead_factor=0.1
     log:
         f"{LOGDIR}/fastqc_concat/{{sample}}_R{{read}}.log"
     benchmark:
         f"{LOGDIR}/fastqc_concat/{{sample}}_R{{read}}.bmk"
-    wrapper:
-        "0.74.0/bio/fastqc"
+    conda:
+        "../envs/fastqc.yaml"
+    script:
+        "scripts/fastqc.py"
 
 
 ## Fastq_screen for concat files
