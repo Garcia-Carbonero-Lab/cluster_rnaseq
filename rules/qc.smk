@@ -169,7 +169,7 @@ rule fastq_screen_files:
     benchmark:
         f"{LOGDIR}/fastq_screen_files/{{sample}}_{{lane}}_fq{{read}}.bmk"
     conda:
-        "envs/fastq_screen.yaml"
+        "../envs/fastq_screen.yaml"
     script:
         "scripts/fastq_screen.py"
 
