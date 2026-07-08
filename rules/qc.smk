@@ -229,11 +229,11 @@ rule fastq_screen_concat:
     output:
         txt=f"{OUTDIR}/fastq_screen/fastq_screen_concat/{{sample}}_R{{read}}_fastq_screen.txt",
         png=f"{OUTDIR}/fastq_screen/fastq_screen_concat/{{sample}}_R{{read}}_fastq_screen.png"
-    threads: 
-        get_resource("fastq_screen","threads")
+    threads:
+        get_resource("fastq_screen", "threads")
     resources:
-        mem_mb=get_resource("fastq_screen","mem_mb"),
-        runtime=get_resource("fastq_screen","runtime")
+        mem_mb=get_resource("fastq_screen", "mem_mb"),
+        runtime=get_resource("fastq_screen", "runtime")
     params:
         fastq_screen_config="{}/FastQ_Screen_Genomes/fastq_screen.conf".format(config["parameters"]["fastq_screen_indexes"]["outdir"]),
         subset=100000,
@@ -242,8 +242,10 @@ rule fastq_screen_concat:
         f"{LOGDIR}/fastq_screen_concat/{{sample}}_R{{read}}.log"
     benchmark:
         f"{LOGDIR}/fastq_screen_concat/{{sample}}_R{{read}}.bmk"
-    wrapper:
-        "v1.23.4/bio/fastq_screen"
+    conda:
+        "../envs/fastq_screen.yaml"
+    script:
+        "scripts/fastq_screen_concat.py"
 
 
 rule multiqc_concat:
