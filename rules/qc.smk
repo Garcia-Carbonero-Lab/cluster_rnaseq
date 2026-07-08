@@ -171,7 +171,7 @@ rule fastq_screen_files:
     conda:
         "../envs/fastq_screen.yaml"
     script:
-        "scripts/fastq_screen.py"
+        "../scripts/fastq_screen.py"
 
 
 rule multiqc_files:
@@ -218,7 +218,7 @@ rule fastqc_concat:
     conda:
         "../envs/fastqc.yaml"
     script:
-        "scripts/fastqc.py"
+        "../scripts/fastqc.py"
 
 
 ## Fastq_screen for concat files
@@ -245,7 +245,7 @@ rule fastq_screen_concat:
     conda:
         "../envs/fastq_screen.yaml"
     script:
-        "scripts/fastq_screen_concat.py"
+        "../scripts/fastq_screen_concat.py"
 
 
 rule multiqc_concat:
