@@ -157,6 +157,8 @@ rule trim_adapters_single_end:
         singleton=OUTDIR + '/trimmed/{sample}/{sample}.single.fastq.gz',
         discarded=OUTDIR + '/trimmed/{sample}/{sample}.discarded.fastq.gz',
         stats=OUTDIR + '/trimmed/{sample}/{sample}.stats.txt'
+    conda:
+        "../envs/bbduk.yaml"
     threads:
         get_resource('trim_adapters_single_end', 'threads')
     resources:
@@ -167,8 +169,8 @@ rule trim_adapters_single_end:
         extra=get_params('trimming', 'extra')
     log:
         f"{LOGDIR}/trim_adapters_single_end/{{sample}}.log",
-    wrapper:
-        "v1.23.5/bio/bbtools/bbduk"
+    script:
+        "../scripts/bbduk_trim.py"
 
 
 rule trim_adapters_paired_end:
@@ -179,6 +181,8 @@ rule trim_adapters_paired_end:
         singleton=OUTDIR + '/trimmed/{sample}/{sample}.single.fastq.gz',
         discarded=OUTDIR + '/trimmed/{sample}/{sample}.discarded.fastq.gz',
         stats=OUTDIR + '/trimmed/{sample}/{sample}.stats.txt'
+     conda:
+        "../envs/bbduk.yaml"
     threads:
         get_resource('trim_adapters_paired_end', 'threads')
     resources:
@@ -189,8 +193,8 @@ rule trim_adapters_paired_end:
         extra=get_params('trimming', 'extra') + ' tpe tbo'
     log:
         f"{LOGDIR}/trim_adapters_paired_end/{{sample}}.log",
-    wrapper:
-        "v1.23.5/bio/bbtools/bbduk"
+    script:
+        "../scripts/bbduk_trim.py"
 
 
 if downsampling:
