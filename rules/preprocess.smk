@@ -181,7 +181,7 @@ rule trim_adapters_paired_end:
         singleton=OUTDIR + '/trimmed/{sample}/{sample}.single.fastq.gz',
         discarded=OUTDIR + '/trimmed/{sample}/{sample}.discarded.fastq.gz',
         stats=OUTDIR + '/trimmed/{sample}/{sample}.stats.txt'
-     conda:
+    conda:
         "../envs/bbduk.yaml"
     threads:
         get_resource('trim_adapters_paired_end', 'threads')
