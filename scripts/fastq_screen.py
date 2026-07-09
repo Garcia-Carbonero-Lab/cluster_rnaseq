@@ -10,8 +10,7 @@ extra = snakemake.params.get("extra", "")
 log = snakemake.log_fmt_shell(stdout=True, stderr=True, append=True)
 
 input_fastq = snakemake.input.fastq
-prefix = re.split(".fastq|.fq|.txt|.seq", os.path.basename(input_fastq))[0]
-
+prefix = re.split(r"\.fastq|\.fq|\.txt|\.seq", os.path.basename(input_fastq))[0]
 with tempfile.TemporaryDirectory() as tempdir:
     if isinstance(_config, dict):
         config_file = f"{tempdir}/fastq_screen_config.txt"
